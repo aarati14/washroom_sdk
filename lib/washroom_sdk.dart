@@ -5,10 +5,14 @@
 // platforms in the `pubspec.yaml` at
 // https://flutter.dev/to/pubspec-plugin-platforms.
 
+import 'package:flutter/services.dart';
+
 import 'washroom_sdk_platform_interface.dart';
 
 class WashroomSdk {
-  Future<String?> getPlatformVersion() {
-    return WashroomSdkPlatform.instance.getPlatformVersion();
+  static const MethodChannel _channel = MethodChannel('washroom_sdk');
+
+  static Future<void> openMap() async {
+    await _channel.invokeMethod('openMap');
   }
 }
