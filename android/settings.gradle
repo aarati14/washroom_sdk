@@ -1,1 +1,11 @@
 rootProject.name = 'washroom_sdk'
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+        flatDir {
+            dirs("libs")
+        }
+    }
+}
